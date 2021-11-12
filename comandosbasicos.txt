@@ -1,0 +1,57 @@
+modo de configuração ligado
+enable
+
+modo de configuração desligado 
+disable
+
+modo de confugaração global
+configure terminal
+	       
+configuração do nome do switch
+hostname+(nome do switch)
+			
+comando para criptografar a senha- service password-encryption
+    
+comando para desativar o loop de erro- no ip domain-lookup
+    
+comando para mostrar alerta na tela- banner motd #AVISO: /mensagem que vc quer escrever/#
+     
+comando para definir uma senha- enable secret /senha/
+
+comando para usuario- username senac secret 123@senac
+
+comando para usuario- username TATUAPE password 123@senac
+
+comando para entrar em uma linha- line console 0
+ 
+comando para ter permissão de entrar nos usuarios- login local
+
+comando para sincronizar as interfaces- logging synchronous
+   
+comando para ativar tempo de inatividade- exec-timeout /5 minutos 30 segundos/
+ 
+coamndo- exit
+
+comando para salvar as alterações do switch- copy running-config startup-config
+
+
+
+
+comando do roteador
+
+enable
+
+configure terminal
+
+interface GigabitEthernet
+
+description Interface Gateway da LAN
+
+ip address 192.168.0.254 255.255.255.0
+
+no shutdown
+
+end
+
+copy running-config startup-config
+                                     
