@@ -43,7 +43,7 @@ enable
 
  configure terminal
 
-  interface GigabitEthernet
+  interface GigabitEthernet 0/0
 
  description Interface Gateway da LAN
 
