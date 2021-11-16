@@ -1,0 +1,37 @@
+!Visualizando a versão do Cisco IOS é informações do Hardware do Switch 2960
+	!DICA: esse comando é utilizado para verificar a versão de hardware e do IOS do Switch
+	!DICA: atualmente a versão utilizada nos hardware da Cisco é 15.x (ou superior, dependo do modelo)
+	!OBSERVAÇÃO: as informações de memórias em equipamentos da Cisco estão em Kbytes ou Bytes
+	!OBSERVAÇÃO: esse comando fornece informações referente a Configuração do Registro de Inicialização
+	show version
+		63488K bytes of flash-simulated non-volatile configuration memory.
+		63488KB/1000=64MB
+
+	!Visualizando informações da inicialização do Switch 2960
+	!DICA: esse comando é utilizado para verificar o arquivo de configuração de inicialização
+	!OBSERVAÇÃO: as informações são importante para o processo de quebra de senha do Switch
+	show boot
+	
+	!Visualizando informações do Flash Card (Memória de Massa) do Switch 2960
+	!DICA: a memória de massa em Switch geralmente são Chips soldados ou módulos interno
+	!OBSERVAÇÃO: diferente do Router, a memória Flash em Switch não pode ser acessada sem desmontar o equipamento
+	show flash:
+	dir flash:
+		64016384 Bytes Total = 64 MB
+		59599664 Bytes Free  = 60 MB
+	
+	!Salvando as configurações da memória RAM para a memória NVRAM
+	copy running-config startup-config
+	
+	!Salvando as configurações da memória NVRAM para a memória FLASH
+	copy startup-config flash: 
+	dir flash:
+	
+	!Salvando as configurações da memória NVRAM para o Servidor TFTP 
+	!DICA: o serviço de TFTP (Trivial File Transfer Protocol) utiliza o Protocolo UDP na Porta Padrão 69
+	!OBSERVAÇÃO: o protocolo UDP (User Datagram Protocol) não é confiável, pois não exige confirmação
+	!OBSERVAÇÃO: o protocolo TFTP foi escolhido pela Cisco para ser o sistema padrão de atualização é Backup
+	dir nvram:
+	ping 192.168.1.10
+	copy startup-config tftp:
+		192.168.1.10

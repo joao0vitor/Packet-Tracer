@@ -1,0 +1,17 @@
+Configuração do VTY
+
+ configure terminal
+
+  line vty // numero de acessos de 0 a 15 no maximo
+
+ login local
+
+  password // senha
+
+ logging synchronous
+
+  exec-timeout 15 30
+
+    transport input all // modo de entrada
+
+      show running-config // para ver as alterações
